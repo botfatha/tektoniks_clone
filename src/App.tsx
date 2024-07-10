@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Hamster from './icons/Hamster';
-import { danceIcon, dollarCoin, inviteIcon, leaderboardIcon, mainCharacter, playIcon, walletIcon } from './images';
-import Info from './icons/Info';
+// import Hamster from './icons/Hamster'; // Unused import
+import { danceIcon, inviteIcon, leaderboardIcon, mainCharacter, playIcon, walletIcon } from './images';
+// import Info from './icons/Info'; // Unused import
 
 const App: React.FC = () => {
   const levelNames = [
@@ -18,27 +18,28 @@ const App: React.FC = () => {
     "Dance Icon"       // From 1,000,000,000 coins to ∞
   ];
 
-  const levelMinPoints = [
-    0,        // Beginner
-    5000,     // Groover
-    25000,    // Mover
-    100000,   // Performer
-    1000000,  // ChoreoGrapher
-    2000000,  // Star
-    10000000, // Dance Pro
-    50000000, // Dance Master
-    100000000,// Dance Legend
-    1000000000// Dance Icon
-  ];
+  // Unused variable
+  // const levelMinPoints = [
+  //   0,        // Beginner
+  //   5000,     // Groover
+  //   25000,    // Mover
+  //   100000,   // Performer
+  //   1000000,  // ChoreoGrapher
+  //   2000000,  // Star
+  //   10000000, // Dance Pro
+  //   50000000, // Dance Master
+  //   100000000,// Dance Legend
+  //   1000000000// Dance Icon
+  // ];
 
-  const [levelIndex, setLevelIndex] = useState(6);
+  const [levelIndex] = useState(6);
   const [points, setPoints] = useState(0);
   const [clicks, setClicks] = useState<{ id: number, x: number, y: number }[]>([]);
   const pointsToAdd = 20;
-  const profitPerHour = 5000;
+  // const profitPerHour = 5000; // Unused variable
 
   const [maxEnergy] = useState(2500); // Set max energy to 2500
-  const [currentEnergy, setCurrentEnergy] = useState(maxEnergy);
+  const [currentEnergy] = useState(maxEnergy)[0]; // setCurrentEnergy is not used
 
   const calculateTimeLeft = (targetHour: number) => {
     const now = new Date();
