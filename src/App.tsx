@@ -38,9 +38,6 @@ const App: React.FC = () => {
   const pointsToAdd = 20;
   const profitPerHour = 5000;
 
-  const [dailyRewardTimeLeft, setDailyRewardTimeLeft] = useState("");
-  const [dailyCipherTimeLeft, setDailyCipherTimeLeft] = useState("");
-  const [dailyComboTimeLeft, setDailyComboTimeLeft] = useState("");
 
   const [maxEnergy] = useState(2500); // Set max energy to 2500
   const [currentEnergy, setCurrentEnergy] = useState(maxEnergy);
