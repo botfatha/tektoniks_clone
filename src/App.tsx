@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Hamster from './icons/Hamster';
+// import Hamster from './icons/Hamster';
 import { danceIcon, dollarCoin, inviteIcon, leaderboardIcon, mainCharacter, playIcon, walletIcon } from './images';
-import Info from './icons/Info';
+//import Info from './icons/Info';
 
 
 const App: React.FC = () => {
@@ -38,9 +38,6 @@ const App: React.FC = () => {
   const pointsToAdd = 20;
   const profitPerHour = 5000;
 
-  const [dailyRewardTimeLeft, setDailyRewardTimeLeft] = useState("");
-  const [dailyCipherTimeLeft, setDailyCipherTimeLeft] = useState("");
-  const [dailyComboTimeLeft, setDailyComboTimeLeft] = useState("");
 
   const [maxEnergy] = useState(2500); // Set max energy to 2500
   const [currentEnergy, setCurrentEnergy] = useState(maxEnergy);
@@ -66,18 +63,6 @@ const App: React.FC = () => {
     return `${paddedHours}:${paddedMinutes}`;
   };
 
-  useEffect(() => {
-    const updateCountdowns = () => {
-      setDailyRewardTimeLeft(calculateTimeLeft(0));
-      setDailyCipherTimeLeft(calculateTimeLeft(19));
-      setDailyComboTimeLeft(calculateTimeLeft(12));
-    };
-
-    updateCountdowns();
-    const interval = setInterval(updateCountdowns, 60000); // Update every minute
-
-    return () => clearInterval(interval);
-  }, []);
 
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (currentEnergy > 0) {
