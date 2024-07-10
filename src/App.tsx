@@ -63,13 +63,6 @@ const App: React.FC = () => {
     return `${paddedHours}:${paddedMinutes}`;
   };
 
-  useEffect(() => {
-    const updateCountdowns = () => {
-      setDailyRewardTimeLeft(calculateTimeLeft(0));
-      setDailyCipherTimeLeft(calculateTimeLeft(19));
-      setDailyComboTimeLeft(calculateTimeLeft(12));
-    };
-
     updateCountdowns();
     const interval = setInterval(updateCountdowns, 60000); // Update every minute
 
